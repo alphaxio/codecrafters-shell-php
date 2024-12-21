@@ -1,8 +1,16 @@
 <?php
-error_reporting(E_ALL);
+error_reporting(E_ALL); // Display all errors for debugging
 
-// Uncomment this block to pass the first stage
-fwrite(STDOUT, "$ ");
+// Infinite loop to keep the shell running
+while (true) {
+    // Print the shell prompt
+    fwrite(STDOUT, "$ ");
 
-// Wait for user input
-fgets(STDIN);
+    // Read user input
+    $input = fgets(STDIN);
+
+    // Optionally, trim the input (not required for this stage)
+    $input = trim($input);
+
+    // For this stage, we don't process the input, just keep looping
+}
