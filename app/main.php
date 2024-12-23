@@ -1,16 +1,11 @@
 <?php
-error_reporting(E_ALL); // Display all errors for debugging
+error_reporting(E_ALL);
 
-// Infinite loop to keep the shell running
-while (true) {
-    // Print the shell prompt
-    fwrite(STDOUT, "$ ");
+// Print shell prompt
+fwrite(STDOUT, "$ ");
 
-    // Read user input
-    $input = fgets(STDIN);
+// Wait for user input
+$input = fgets(STDIN);
 
-    // Optionally, trim the input (not required for this stage)
-    $input = trim($input);
-
-    // For this stage, we don't process the input, just keep looping
-}
+// Remove leading/trailing whitespace and print error message
+printf("%s: command not found\n", trim($input));
